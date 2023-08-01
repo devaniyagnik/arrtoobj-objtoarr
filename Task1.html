@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task</title>
+  </head>
+  <body>
+ 
+    <div>
+      <h1>Give Rating Ratio</h1>
+      <input type="number" min="1" id="totalrating" required />
+    </div>
+    <div>
+      <h1>How much class give</h1>
+      <input type="number" min="1" id="ratingclass" required />
+    </div>
+    <div>
+      <h1>enter number for know class of rating</h1>
+      <input type="number" min="1" id="finalrating" required />
+    </div>
+    <br />
+    <button name="Submitbtn" onclick="Submitdata()">Submit</button>
+ 
+    <h1>Output : <span id="answer"></span></h1>
+    <script>
+      var answer = document.getElementById("answer");
+  
+      var abcd = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        
+      function Submitdata() {
+        if(!parseInt(totalrating.value) && parseInt(finalrating.value) < 1 && parseInt(ratingclass.value) < 1 ){
+          alert("All value is greter than 0");
+        }else if (parseInt(totalrating.value) < parseInt(finalrating.value)) {
+          alert("totalrating value is less than finalrating Value");
+          finalrating.value = 0;
+        } else if ((parseInt(ratingclass.value)  > parseInt(totalrating.value)* 2 - 1) && (parseInt(ratingclass.value) > 27) ){
+          alert("ratingclass value is less than totalrating value * 2 / Less than 27 ");
+          ratingclass.value = 0;
+        } else {
+          console.log((totalrating.value) < finalrating.value);
+          var a = Math.floor((1 - finalrating.value / totalrating.value) * ratingclass.value);
+          console.log(a);
+          var finalratingclass = abcd[a]+abcd[a+1];
+          console.log(abcd[a]+abcd[a+1]);
+          answer.innerHTML = finalratingclass;
+        }
+      }
+    </script>
+  </body>
+</html>

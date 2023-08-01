@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./script.js"></script>
+  </head>
+  <body>
+    <h1>task 2</h1>
+    <button id="arrtoobj">Arr to Obj</button>
+    <button id="objtoarr">Obj to Arr</button>
+
+    <script>
+      var arrtoobjbtn = document.getElementById("arrtoobj");
+      var objtoarrbtn = document.getElementById("objtoarr");
+
+      objtoarrbtn.addEventListener("click", function () {
+        console.log("clicked object to array");
+        console.log("object to array : ", objtoarr);
+      });
+
+      arrtoobjbtn.addEventListener("click", function () {
+        console.log("clicked array to object");
+        console.log("array to object : ", arrtoobj);
+      });
+
+
+      
+    </script>
+  </body>
+</html>
